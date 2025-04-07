@@ -12,12 +12,14 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">BMI</Label>
         <TextBox Grid.Row="1" Name="weightinput" Tag="Súly:" Text="Súly:" VerticalAlignment="Center" FontSize="20"></TextBox>
         <TextBox Grid.Row="2" Name="heightinput" Tag="Magasság:" Text="Magasság:" VerticalAlignment="Center" FontSize="20"></TextBox>
-        <StackPanel Name="Everything" Grid.Row="3" Background="Yellow" Orientation="Horizontal"></StackPanel>
+        <TextBox Grid.Row="3" Name="nameinput" Tag="Név:" Text="Név:" VerticalAlignment="Center" FontSize="20"></TextBox>
+        <StackPanel Name="Everything" Grid.Row="4" Background="Yellow" Orientation="Horizontal"></StackPanel>
         
     </Grid>
 </Window>

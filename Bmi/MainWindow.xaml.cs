@@ -68,7 +68,7 @@ namespace Bmi
                 if (int.TryParse(weightinput.Text.Trim(), out weight) && int.TryParse(heightinput.Text.Trim(), out height))
                 {
                     double BMI = weight / Math.Pow(((double)height/100),2);
-                    Everything.Children.Add(new Label() { Content = "BMI: " + BMI.ToString("0.00") + " vagyis: " + Overweight(BMI) });
+                    Everything.Children.Add(new Label() { Content = "Név: " + nameinput.Text + "BMI: " + BMI.ToString("0.00") + " vagyis: " + Overweight(BMI) });
                 }
             }
         }
