@@ -1,0 +1,22 @@
+﻿<Window x:Class="Bmi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bmi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">BMI</Label>
+        <TextBox Grid.Row="1" Name="weightinput" Tag="Súly:" Text="Súly:" VerticalAlignment="Center" FontSize="20"></TextBox>
+        <TextBox Grid.Row="2" Name="heightinput" Tag="Magasság:" Text="Magasság:" VerticalAlignment="Center" FontSize="20"></TextBox>
+        <Label Grid.Row="3" Name="label" Tag="Eredmény:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="5 5 100 5">Eredmény: </Label>
+    </Grid>
+</Window>
