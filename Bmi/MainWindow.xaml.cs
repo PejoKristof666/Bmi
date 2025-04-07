@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Bmi
 {
@@ -34,8 +35,8 @@ namespace Bmi
             weightinput.LostFocus += changeBack;
             heightinput.LostFocus += changeBack;
 
-            weightinput.KeyDown += enter;
-            heightinput.KeyDown += enter;
+            weightinput.KeyUp += enter;
+            heightinput.KeyUp += enter;
         }
 
         void change(object s, EventArgs e)
@@ -43,7 +44,7 @@ namespace Bmi
             TextBox textB = s as TextBox;
             if (textB.Text == textB.Tag.ToString())
             {
-                textB.Text = "";
+                textB.Clear();
             }
 
         }
@@ -62,8 +63,38 @@ namespace Bmi
         {
             if (e.Key == Key.Enter)
             {
-                label.Content = int.Parse(weightinput.Text) / (int.Parse(heightinput.Text) / 100);
+                int weight;
+                int height;
+                if (int.TryParse(weightinput.Text.Trim(), out weight) && int.TryParse(heightinput.Text.Trim(), out height))
+                {
+                    double BMI = weight / Math.Pow(((double)height/100),2);
+                    Everything.Children.Add(new Label() { Content = "BMI: " + BMI.ToString("0.00") + " vagyis: " + Overweight(BMI) });
+                }
             }
+        }
+        string Overweight(double BMI)
+        {
+            if (BMI < 18.5)
+            {
+                return "Sovány";
+            }
+            if (BMI < 25)
+            {
+                return "Normál";
+            }
+            if (BMI < 30)
+            {
+                return "Kicsit dagadt";
+            }
+            if (BMI < 35) 
+            {
+                return "Egészen dagadt";
+            }
+            if (BMI < 40)
+            {
+                return "Majdnem teljesen dagadt";
+            }
+            return "Túl dagadt";
         }
     }
 }

@@ -17,6 +17,7 @@
         <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">BMI</Label>
         <TextBox Grid.Row="1" Name="weightinput" Tag="Súly:" Text="Súly:" VerticalAlignment="Center" FontSize="20"></TextBox>
         <TextBox Grid.Row="2" Name="heightinput" Tag="Magasság:" Text="Magasság:" VerticalAlignment="Center" FontSize="20"></TextBox>
-        <Label Grid.Row="3" Name="label" Tag="Eredmény:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="5 5 100 5">Eredmény: </Label>
+        <StackPanel Name="Everything" Grid.Row="3" Background="Yellow" Orientation="Horizontal"></StackPanel>
+        
     </Grid>
 </Window>
